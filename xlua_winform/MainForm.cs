@@ -22,7 +22,7 @@ namespace xlua
 	{
 		public static MonoBehaviour global_beh = null;
 		
-//		private MonoBehaviour beh = new Helloworld();
+		private MonoBehaviour beh = new Helloworld();
 //		private MonoBehaviour beh = new LuaBehaviour();
 //		private MonoBehaviour beh = new LuaBehaviourUIEvent();
 //		private MonoBehaviour beh = new InvokeLua();
@@ -35,7 +35,7 @@ namespace xlua
 //		private MonoBehaviour beh = new GenericMethodExample();
 //		private MonoBehaviour beh = new SignatureLoaderTest();
 //		private MonoBehaviour beh = new XLuaTest.RawObjectTest();
-		private MonoBehaviour beh = new ReImplementInLua();
+//		private MonoBehaviour beh = new ReImplementInLua();
 		
 		public MainForm()
 		{

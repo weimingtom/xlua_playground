@@ -3,6 +3,7 @@
 
 ## Winform version (WIP)    
 * see xlua_winform/  
+* Modify xlua_winform/MainForm.cs: private MonoBehaviour beh = ...   
 
 ## Unity version (from original sources)  
 * see xlua_unity/  
