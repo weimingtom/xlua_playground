@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{4C0F952A-F779-4F98-A6A1-21FE5ED004C7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>xlua</RootNamespace>
+    <AssemblyName>xlua</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE;XLUA_GENERAL;THREAD_SAFE;HOTFIX_ENABLE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Cecil">
+      <HintPath>dll\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>dll\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>dll\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>dll\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Examples\01_Helloworld\Helloworld.cs" />
+    <Compile Include="Examples\02_U3DScripting\LuaBehaviour.cs" />
+    <Compile Include="Examples\03_UIEvent\LuaBehaviourUIEvent.cs" />
+    <Compile Include="Examples\04_LuaObjectOrented\InvokeLua.cs" />
+    <Compile Include="Examples\05_NoGc\NoGc.cs" />
+    <Compile Include="Examples\06_Coroutine\CoroutineTest.cs" />
+    <Compile Include="Examples\06_Coroutine\Coroutine_Runner.cs" />
+    <Compile Include="Examples\07_AsyncTest\AsyncTest.cs" />
+    <Compile Include="Examples\07_AsyncTest\MessageBox.cs" />
+    <Compile Include="Examples\08_Hotfix\HotfixTest.cs" />
+    <Compile Include="Examples\08_Hotfix\HotfixTest2.cs" />
+    <Compile Include="Examples\08_Hotfix\StatefullTest.cs" />
+    <Compile Include="Examples\09_GenericMethod\Foo.cs" />
+    <Compile Include="Examples\09_GenericMethod\GenericMethodExample.cs" />
+    <Compile Include="Examples\10_SignatureLoader\SignatureLoaderTest.cs" />
+    <Compile Include="Examples\11_RawObject\RawObjectTest.cs" />
+    <Compile Include="Examples\12_ReImplementInLua\ReImplementInLua.cs" />
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCo.cs" />
+    <Compile Include="UnityEngine.Events\UnityAction.cs" />
+    <Compile Include="UnityEngine.UI\Button.cs" />
+    <Compile Include="UnityEngine.UI\InputField.cs" />
+    <Compile Include="UnityEngine.UI\Text.cs" />
+    <Compile Include="UnityEngine\Bounds.cs" />
+    <Compile Include="UnityEngine\Canvas.cs" />
+    <Compile Include="UnityEngine\Color.cs" />
+    <Compile Include="UnityEngine\Component.cs" />
+    <Compile Include="UnityEngine\Coroutine.cs" />
+    <Compile Include="UnityEngine\Debug.cs" />
+    <Compile Include="UnityEngine\GameObject.cs" />
+    <Compile Include="UnityEngine\GUI.cs" />
+    <Compile Include="UnityEngine\GUISkin.cs" />
+    <Compile Include="UnityEngine\GUIStyle.cs" />
+    <Compile Include="UnityEngine\GUIStyleState.cs" />
+    <Compile Include="UnityEngine\Light.cs" />
+    <Compile Include="UnityEngine\Mathf.cs" />
+    <Compile Include="UnityEngine\MonoBehaviour.cs" />
+    <Compile Include="UnityEngine\Object.cs" />
+    <Compile Include="UnityEngine\Quaternion.cs" />
+    <Compile Include="UnityEngine\Ray.cs" />
+    <Compile Include="UnityEngine\Ray2D.cs" />
+    <Compile Include="UnityEngine\Rect.cs" />
+    <Compile Include="UnityEngine\Resources.cs" />
+    <Compile Include="UnityEngine\TextAsset.cs" />
+    <Compile Include="UnityEngine\Time.cs" />
+    <Compile Include="UnityEngine\Transform.cs" />
+    <Compile Include="UnityEngine\Vector2.cs" />
+    <Compile Include="UnityEngine\Vector3.cs" />
+    <Compile Include="UnityEngine\Vector4.cs" />
+    <Compile Include="UnityEngine\WaitForSeconds.cs" />
+    <Compile Include="UnityEngine\WWW.cs" />
+    <Compile Include="XLua\Gen\DelegatesGensBridge.cs" />
+    <Compile Include="XLua\Gen\EnumWrap.cs" />
+    <Compile Include="XLua\Gen\InvokeLuaICalcBridge.cs" />
+    <Compile Include="XLua\Gen\PackUnpack.cs" />
+    <Compile Include="XLua\Gen\WrapPusher.cs" />
+    <Compile Include="XLua\Gen\XLuaGenAutoRegister.cs" />
+    <Compile Include="XLua\Gen\XLuaTestIExchangerBridge.cs" />
+    <Compile Include="XLua\Gen\XLuaTestMyStructWrap.cs" />
+    <Compile Include="XLua\Gen\XLuaTestNoGcWrap.cs" />
+    <Compile Include="XLua\Gen\XLuaTestPeddingWrap.cs" />
+    <Compile Include="XLua\Src\CodeEmit.cs" />
+    <Compile Include="XLua\Src\CopyByValue.cs" />
+    <Compile Include="XLua\Src\DelegateBridge.cs" />
+    <Compile Include="XLua\Src\GenAttributes.cs" />
+    <Compile Include="XLua\Src\InternalGlobals.cs" />
+    <Compile Include="XLua\Src\LuaBase.cs" />
+    <Compile Include="XLua\Src\LuaDLL.cs" />
+    <Compile Include="XLua\Src\LuaEnv.cs" />
+    <Compile Include="XLua\Src\LuaException.cs" />
+    <Compile Include="XLua\Src\LuaFunction.cs" />
+    <Compile Include="XLua\Src\LuaTable.cs" />
+    <Compile Include="XLua\Src\MethodWarpsCache.cs" />
+    <Compile Include="XLua\Src\ObjectCasters.cs" />
+    <Compile Include="XLua\Src\ObjectPool.cs" />
+    <Compile Include="XLua\Src\ObjectTranslator.cs" />
+    <Compile Include="XLua\Src\ObjectTranslatorPool.cs" />
+    <Compile Include="XLua\Src\RawObject.cs" />
+    <Compile Include="XLua\Src\SignatureLoader.cs" />
+    <Compile Include="XLua\Src\StaticLuaCallbacks.cs" />
+    <Compile Include="XLua\Src\TemplateEngine\TemplateEngine.cs" />
+    <Compile Include="XLua\Src\TypeExtensions.cs" />
+    <Compile Include="XLua\Src\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="dll\Mono.Cecil.dll" />
+    <None Include="dll\Mono.Cecil.Mdb.dll" />
+    <None Include="dll\Mono.Cecil.Pdb.dll" />
+    <None Include="dll\Mono.Security.dll" />
+    <None Include="Examples\02_U3DScripting\LuaBehaviour.cs.meta" />
+    <None Include="Examples\02_U3DScripting\LuaTestScript.lua.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\02_U3DScripting\LuaTestScript.lua.txt.meta" />
+    <None Include="Examples\02_U3DScripting\U3DScripting.unity" />
+    <None Include="Examples\02_U3DScripting\U3DScripting.unity.meta" />
+    <None Include="Examples\03_UIEvent\ButtonInteraction.lua.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\03_UIEvent\ButtonInteraction.lua.txt.meta" />
+    <None Include="Examples\03_UIEvent\UI.unity" />
+    <None Include="Examples\03_UIEvent\UI.unity.meta" />
+    <None Include="Examples\04_LuaObjectOrented\InvokeLua.cs.meta" />
+    <None Include="Examples\04_LuaObjectOrented\InvokeLua.unity" />
+    <None Include="Examples\04_LuaObjectOrented\InvokeLua.unity.meta" />
+    <None Include="Examples\05_NoGc\NoGc.cs.meta" />
+    <None Include="Examples\05_NoGc\NoGc.unity" />
+    <None Include="Examples\05_NoGc\NoGc.unity.meta" />
+    <None Include="Examples\06_Coroutine\Coroutine.unity" />
+    <None Include="Examples\06_Coroutine\Coroutine.unity.meta" />
+    <None Include="Examples\06_Coroutine\CoroutineTest.cs.meta" />
+    <None Include="Examples\06_Coroutine\Coroutine_Runner.cs.meta" />
+    <None Include="Examples\06_Coroutine\Resources.meta" />
+    <None Include="Examples\06_Coroutine\Resources\coruntine_test.lua.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\06_Coroutine\Resources\coruntine_test.lua.txt.meta" />
+    <None Include="Examples\06_Coroutine\Resources\cs_coroutine.lua.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\06_Coroutine\Resources\cs_coroutine.lua.txt.meta" />
+    <None Include="Examples\07_AsyncTest\AsyncTest.cs.meta" />
+    <None Include="Examples\07_AsyncTest\AsyncTest.unity" />
+    <None Include="Examples\07_AsyncTest\AsyncTest.unity.meta" />
+    <None Include="Examples\07_AsyncTest\MessageBox.cs.meta" />
+    <None Include="Examples\07_AsyncTest\Resources.meta" />
+    <None Include="Examples\07_AsyncTest\Resources\AlertBox.prefab" />
+    <None Include="Examples\07_AsyncTest\Resources\AlertBox.prefab.meta" />
+    <None Include="Examples\07_AsyncTest\Resources\async_test.lua.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\07_AsyncTest\Resources\async_test.lua.txt.meta" />
+    <None Include="Examples\07_AsyncTest\Resources\ConfirmBox.prefab" />
+    <None Include="Examples\07_AsyncTest\Resources\ConfirmBox.prefab.meta" />
+    <None Include="Examples\07_AsyncTest\Resources\message_box.lua.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\07_AsyncTest\Resources\message_box.lua.txt.meta" />
+    <None Include="Examples\08_Hotfix\HotfixTest.cs.meta" />
+    <None Include="Examples\08_Hotfix\HotfixTest.unity" />
+    <None Include="Examples\08_Hotfix\HotfixTest.unity.meta" />
+    <None Include="Examples\08_Hotfix\HotfixTest2.cs.meta" />
+    <None Include="Examples\08_Hotfix\HotfixTest2.unity" />
+    <None Include="Examples\08_Hotfix\HotfixTest2.unity.meta" />
+    <None Include="Examples\08_Hotfix\StatefullTest.cs.meta" />
+    <None Include="Examples\09_GenericMethod\Foo.cs.meta" />
+    <None Include="Examples\09_GenericMethod\GenericMethod.unity" />
+    <None Include="Examples\09_GenericMethod\GenericMethod.unity.meta" />
+    <None Include="Examples\09_GenericMethod\GenericMethodExample.cs.meta" />
+    <None Include="Examples\10_SignatureLoader\otherfiles.meta" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\key_ras" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\key_ras.meta" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\key_ras.pub" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\key_ras.pub.meta" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\signatured1.lua" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\signatured1.lua.meta" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\signatured2.lua" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\signatured2.lua.meta" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\signatured3.lua" />
+    <None Include="Examples\10_SignatureLoader\otherfiles\signatured3.lua.meta" />
+    <None Include="Examples\10_SignatureLoader\Resources.meta" />
+    <None Include="Examples\10_SignatureLoader\Resources\signatured1.lua.bytes">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\10_SignatureLoader\Resources\signatured1.lua.bytes.meta" />
+    <None Include="Examples\10_SignatureLoader\Resources\signatured2.lua.bytes">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\10_SignatureLoader\Resources\signatured2.lua.bytes.meta" />
+    <None Include="Examples\10_SignatureLoader\Resources\signatured3.lua.bytes">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\10_SignatureLoader\Resources\signatured3.lua.bytes.meta" />
+    <None Include="Examples\10_SignatureLoader\signatured1.lua">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\10_SignatureLoader\signatured1.lua.meta" />
+    <None Include="Examples\10_SignatureLoader\signatured2.lua">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\10_SignatureLoader\signatured2.lua.meta" />
+    <None Include="Examples\10_SignatureLoader\signatured3.lua">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Examples\10_SignatureLoader\signatured3.lua.meta" />
+    <None Include="Examples\10_SignatureLoader\SignatureLoaderTest.cs.meta" />
+    <None Include="Examples\10_SignatureLoader\SignatureLoaderTest.unity" />
+    <None Include="Examples\10_SignatureLoader\SignatureLoaderTest.unity.meta" />
+    <None Include="Examples\11_RawObject\RawObject.unity" />
+    <None Include="Examples\11_RawObject\RawObject.unity.meta" />
+    <None Include="Examples\11_RawObject\RawObjectTest.cs.meta" />
+    <None Include="Examples\12_ReImplementInLua\ReImplementInLua.cs.meta" />
+    <None Include="Examples\12_ReImplementInLua\ReImplementInLua.unity" />
+    <None Include="Examples\12_ReImplementInLua\ReImplementInLua.unity.meta" />
+    <None Include="readme.txt" />
+    <None Include="xlua.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="XLua\Resources\perf\memory.lua.txt" />
+    <None Include="XLua\Resources\perf\profiler.lua.txt" />
+    <None Include="XLua\Resources\xlua\util.lua.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dll" />
+    <Folder Include="Examples" />
+    <Folder Include="Examples\01_Helloworld" />
+    <Folder Include="Examples\02_U3DScripting" />
+    <Folder Include="Examples\03_UIEvent" />
+    <Folder Include="Examples\04_LuaObjectOrented" />
+    <Folder Include="Examples\05_NoGc" />
+    <Folder Include="Examples\06_Coroutine" />
+    <Folder Include="Examples\06_Coroutine\Resources" />
+    <Folder Include="Examples\07_AsyncTest" />
+    <Folder Include="Examples\07_AsyncTest\Resources" />
+    <Folder Include="Examples\08_Hotfix" />
+    <Folder Include="Examples\09_GenericMethod" />
+    <Folder Include="Examples\10_SignatureLoader" />
+    <Folder Include="Examples\10_SignatureLoader\otherfiles" />
+    <Folder Include="Examples\10_SignatureLoader\Resources" />
+    <Folder Include="Examples\11_RawObject" />
+    <Folder Include="Examples\12_ReImplementInLua" />
+    <Folder Include="UnityEngine.UI" />
+    <Folder Include="UnityEngine.Events" />
+    <Folder Include="UnityEngine" />
+    <Folder Include="XLua" />
+    <Folder Include="XLua\Gen" />
+    <Folder Include="XLua\Resources" />
+    <Folder Include="XLua\Resources\perf" />
+    <Folder Include="XLua\Resources\xlua" />
+    <Folder Include="XLua\Src" />
+    <Folder Include="XLua\Src\TemplateEngine" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
