@@ -8,3 +8,7 @@
 ## Unity version (from original sources)  
 * see xlua_unity/  
 * see https://github.com/Tencent/xLua  
+
+## TODO  
+* Port to Mono and OpenTK  
+* Remove gen depend  
